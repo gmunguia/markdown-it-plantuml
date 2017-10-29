@@ -77,7 +77,7 @@ module.exports = function umlPlugin(md, name, options) {
         continue;
       }
 
-      if (state.sCount[nextLine] - state.blkIndent > 0) {
+      if (state.sCount[nextLine] > state.sCount[startLine]) {
         // closing fence should not be indented with respect of opening fence
         continue;
       }
