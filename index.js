@@ -11,7 +11,7 @@ module.exports = function umlPlugin(md, name, options) {
   }
 
   function generateSourceDefault(umlCode) {
-    var deflate = require('./deflate.js');
+    var deflate = require('./lib/deflate.js');
     var zippedCode =
       deflate.encode64(deflate.zip_deflate('@startuml\n' + umlCode + '\n@enduml', 9));
     return 'http://www.plantuml.com/plantuml/svg/' + zippedCode;
