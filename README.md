@@ -38,4 +38,4 @@ __options:__
 
 ## License
 
-MIT
+[MIT](https://github.com/gmunguia/markdown-it-plantuml/blob/master/LICENSE)
