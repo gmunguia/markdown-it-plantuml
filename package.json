@@ -2,7 +2,7 @@
   "name": "markdown-it-plantuml",
   "version": "0.1.0",
   "description": "Plugin to create block-level uml diagrams for markdown-it markdown parser",
-  "repository": "markdown-it/markdown-it-plantuml",
+  "repository": "gmunguia/markdown-it-plantuml",
   "license": "MIT",
   "scripts": {
     "test": "mocha test/*.js"
@@ -16,7 +16,7 @@
   ],
   "devDependencies": {
     "eslint": "4.10.0",
-    "markdown-it-testgen": "^0.1.4",
-    "mocha": "^4.0.1"
+    "markdown-it-testgen": "0.1.4",
+    "mocha": "4.0.1"
   }
 }
