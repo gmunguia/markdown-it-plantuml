@@ -1,0 +1,103 @@
+Simple diagram
+.
+@startuml
+Bob -> Alice : hello
+@enduml
+.
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80">
+.
+
+
+Anything inside diagrams will not be parsed
+.
+@startuml
+Bob -> Alice : hello
+# This wont be a title
+@enduml
+.
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vr9M2Cd8B5OepyyhKKXALKXKACaioKdbSaZDIm7g0G00">
+.
+
+
+Marker could be indented up to 3 spaces
+.
+   @startuml
+   Bob -> Alice : hello
+   @enduml
+.
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuL9GK73AJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1oWC0">
+.
+
+
+But that's a code block
+.
+    @startuml
+    Bob -> Alice : hello
+    @enduml
+.
+<pre><code>@startuml
+Bob -&gt; Alice : hello
+@enduml
+</code></pre>
+.
+
+
+Diagrams self-close at the end of the document
+.
+@startuml
+Bob -> Alice : hello
+.
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80">
+.
+
+
+They should terminate paragraphs
+.
+blah blah
+@startuml
+Bob -> Alice : hello
+@enduml
+.
+<p>blah blah</p>
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80">
+.
+
+
+They could be nested in lists
+.
+ - @startuml
+   Bob -> Alice : hello
+   @enduml
+.
+<ul>
+<li>
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuL9GK73AJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1oWC0">
+</li>
+</ul>
+.
+
+
+List indentation quirks
+.
+ -  @startuml
+    Bob -> Alice : hello
+   @enduml
+
+ -  @startuml
+   Bob -> Alice : hello
+   @enduml
+.
+<ul>
+<li>
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuL800gVy90LTEmN7dCpaL0KhXOpKd9nyBeVKl1IW0W00">
+</li>
+</ul>
+<p>@enduml</p>
+<ul>
+<li>
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuU9oICrB0J80">
+</li>
+</ul>
+<p>Bob -&gt; Alice : hello
+@enduml</p>
+.
