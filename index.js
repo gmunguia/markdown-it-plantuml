@@ -4,12 +4,6 @@
 
 module.exports = function umlPlugin(md, name, options) {
 
-  function renderDefault(tokens, idx, _options, env, renderer) {
-    var token = tokens[idx];
-    token.attrPush([ 'src', token.meta ]);
-    return renderer.renderToken(tokens, idx, _options, env, renderer);
-  }
-
   function generateSourceDefault(umlCode) {
     var deflate = require('./lib/deflate.js');
     var zippedCode =
@@ -24,7 +18,7 @@ module.exports = function umlPlugin(md, name, options) {
       closeMarker = options.closeMarker || '@enduml',
       closeChar = closeMarker.charCodeAt(0),
       generateSource = options.generateSource || generateSourceDefault,
-      render = options.render || renderDefault;
+      render = options.render || md.renderer.rules.image;
 
   function uml(state, startLine, endLine, silent) {
     var nextLine, markup, params, token, i,
@@ -96,19 +90,30 @@ module.exports = function umlPlugin(md, name, options) {
       break;
     }
 
-    // Todo: accept this function as parameter.
-
     var contents = state.src
       .split('\n')
       .slice(startLine + 1, nextLine)
       .join('\n');
 
+    // We generate a token list for the alt property, to mimic what the image parser does.
+    var altToken = [];
+    // Remove leading space if any.
+    var alt = params ? params.slice(1) : 'uml diagram';
+    state.md.inline.parse(
+      alt,
+      state.md,
+      state.env,
+      altToken
+    );
+
     token = state.push('uml_diagram', 'img', 0);
-    token.markup = markup;
+    // alt is constructed from children. No point in populating it here.
+    token.attrs = [ [ 'src', generateSource(contents) ], [ 'alt', '' ] ];
     token.block = true;
+    token.children = altToken;
     token.info = params;
     token.map = [ startLine, nextLine ];
-    token.meta = generateSource(contents);
+    token.markup = markup;
 
     state.line = nextLine + (autoClosed ? 1 : 0);
 
