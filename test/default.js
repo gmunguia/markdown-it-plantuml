@@ -7,8 +7,8 @@ var plantuml = require('../');
 
 /*eslint-env mocha*/
 
-describe('default diagram', function () {
+describe('default diagram behavior', function () {
   var parser = md().use(plantuml);
 
-  generate(path.join(__dirname, 'fixtures/default.txt'), parser);
+  generate(path.join(__dirname, 'fixtures/default.txt'), { header: true }, parser);
 });
