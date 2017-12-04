@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-plantuml",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Plugin to create block-level uml diagrams for markdown-it markdown parser",
   "repository": "gmunguia/markdown-it-plantuml",
   "license": "MIT",
