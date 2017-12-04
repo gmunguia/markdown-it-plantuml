@@ -5,8 +5,11 @@
   "repository": "gmunguia/markdown-it-plantuml",
   "license": "MIT",
   "scripts": {
-    "test": "mocha test/*.js"
+    "test": "mocha test/*.js",
+    "build": "babel lib -d build",
+    "prepublish": "yarn build"
   },
+  "main": "./build/index.js",
   "keywords": [
     "markdown-it-plugin",
     "markdown-it",
@@ -15,6 +18,8 @@
     "plantuml"
   ],
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "eslint": "4.10.0",
     "markdown-it-testgen": "0.1.4",
     "mocha": "4.0.1"
