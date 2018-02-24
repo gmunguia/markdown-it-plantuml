@@ -1,16 +1,21 @@
 # markdown-it-plantuml
 
+[![npm version](https://img.shields.io/npm/v/markdown-it-plantuml.svg)](https://www.npmjs.com/package/markdown-it-plantuml)
+[![CircleCI build](https://img.shields.io/circleci/project/github/gmunguia/markdown-it-plantuml.svg)](https://www.npmjs.com/package/markdown-it-plantuml)
+
 > Plugin for creating block-level uml diagrams for [markdown-it](https://github.com/markdown-it/markdown-it) markdown parser.
 
-With this plugin you can create uml diagrams like:
+With this plugin you can create uml diagrams inside your markdown files:
 
-```
+```markdown
+# UML example:
+
 @startuml
 Bob -> Alice : hello
 @enduml
 ```
 
-See [plantuml website](plantuml.com) for more details.
+See [plantuml website](https://plantuml.com) for more details.
 
 ## Installation
 
@@ -20,21 +25,40 @@ node.js, browser:
 $ npm install markdown-it-plantuml --save
 ```
 
-
-## API
+## Basic usage
 
 ```js
-var md = require('markdown-it')()
-            .use(require('markdown-it-plantuml')[, options]);
+const md = require('markdown-it')()
+           .use(require('markdown-it-plantuml'));
 ```
 
-Params:
+See [markdown-it repository](https://github.com/markdown-it/markdown-it) for more details.
 
-__options:__
-  - __render__ - optional, renderer function for opening/closing tokens.
-  - __generateSource__ - optional, generates the `src` property of the image element.
-  - __openMarker__ - optional (`@startuml`), string to use as oppening delimiter.
-  - __closeMarker__ - optional (`@enduml`), string to use as closing delimiter.
+## Advanced usage
+
+```js
+const md = require('markdown-it')()
+           .use(require('markdown-it-plantuml'), options);
+```
+
+Options:
+  - __openMarker__ - optional, defaults to `@startuml`. String to use as oppening delimiter.
+  - __closeMarker__ - optional, defaults to `@enduml`. String to use as closing delimiter.
+  - __generateSource__ - optional, defaults to using public plant-uml server. Generates the `src` property of the image element.
+  - __render__ - optional, defaults to markdown-it image renderer. Renderer function for opening/closing tokens.
+
+#### Example: using custom URL to serve diagrams
+
+```js
+const options = {
+  generateSource: function generateSource(umlCode) {
+    return `https://your.server/plant-uml/${yourEncodeFunction(umlCode)}`; 
+  }
+}
+
+const md = require('markdown-it')()
+           .use(require('markdown-it-plantuml'), options);
+```
 
 ## License
 

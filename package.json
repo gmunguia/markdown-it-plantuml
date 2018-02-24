@@ -1,4 +1,5 @@
 {
+  "author": "Gerardo Munguia <gerardomunguiahoyo@gmail.com>",
   "name": "markdown-it-plantuml",
   "version": "0.3.2",
   "description": "Plugin to create block-level uml diagrams for markdown-it markdown parser",
