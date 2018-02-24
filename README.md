@@ -1,7 +1,7 @@
 # markdown-it-plantuml
 
 [![npm version](https://img.shields.io/npm/v/markdown-it-plantuml.svg)](https://www.npmjs.com/package/markdown-it-plantuml)
-[![CircleCI build](https://img.shields.io/circleci/project/github/gmunguia/markdown-it-plantuml.svg)](https://www.npmjs.com/package/markdown-it-plantuml)
+[![CircleCI build](https://img.shields.io/circleci/project/github/gmunguia/markdown-it-plantuml.svg)](https://circleci.com/gh/gmunguia/markdown-it-plantuml/tree/master)
 
 > Plugin for creating block-level uml diagrams for [markdown-it](https://github.com/markdown-it/markdown-it) markdown parser.
 
