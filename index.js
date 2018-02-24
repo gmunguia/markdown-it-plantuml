@@ -2,7 +2,7 @@
 //
 'use strict';
 
-module.exports = function umlPlugin(md, name, options) {
+module.exports = function umlPlugin(md, options) {
 
   function generateSourceDefault(umlCode) {
     var deflate = require('./lib/deflate.js');
