@@ -76,8 +76,15 @@ module.exports = function umlPlugin(md, options) {
         continue;
       }
 
+      var closeMarkerMatched = true;
       for (i = 0; i < closeMarker.length; ++i) {
-        if (closeMarker[i] !== state.src[start + i]) { return false; }
+        if (closeMarker[i] !== state.src[start + i]) {
+          closeMarkerMatched = false;
+        }
+      }
+
+      if (!closeMarkerMatched) {
+        continue;
       }
 
       // make sure tail has spaces only

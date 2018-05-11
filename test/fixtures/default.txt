@@ -111,3 +111,19 @@ List indentation quirks
 <p>Bob -&gt; Alice : hello
 @enduml</p>
 .
+
+
+Timing diagram is supported
+.
+@startuml
+robust "Web Browser" as WB
+
+@0
+WB is Idle
+
+@100
+WB is Processing
+@enduml
+.
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuIhAJoejBb5G2azDKd0goYylJYrIKaWiLWXtuk9oCE0ATrB8B5RmJCb91N8D3M020KNvoQd5nPbvwLmEgNafG8C0" alt="uml diagram">
+.
