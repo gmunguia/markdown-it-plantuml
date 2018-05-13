@@ -80,6 +80,7 @@ module.exports = function umlPlugin(md, options) {
       for (i = 0; i < closeMarker.length; ++i) {
         if (closeMarker[i] !== state.src[start + i]) {
           closeMarkerMatched = false;
+          break;
         }
       }
 
