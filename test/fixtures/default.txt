@@ -127,3 +127,13 @@ WB is Processing
 .
 <img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuIhAJoejBb5G2azDKd0goYylJYrIKaWiLWXtuk9oCE0ATrB8B5RmJCb91N8D3M020KNvoQd5nPbvwLmEgNafG8C0" alt="uml diagram">
 .
+
+
+UML including non-english character is rendered correctly
+.
+@startuml
+太郎 -> 花子 : こんにちは！
+@enduml
+.
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNgwPDNBvZu5NJk55rqRdwwTe62byBXnykEcoOyRLpzkNFYuSVtxFOrS3gbvAK3L0000" alt="uml diagram">
+.
