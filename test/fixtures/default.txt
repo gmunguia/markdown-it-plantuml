@@ -111,3 +111,12 @@ List indentation quirks
 <p>Bob -&gt; Alice : hello
 @enduml</p>
 .
+
+UML including non-english character is rendered correctly
+.
+@startuml
+太郎 -> 花子 : こんにちは！
+@enduml
+.
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNgwPDNBvZu5NJk55rqRdwwTe62byBXnykEcoOyRLpzkNFYuSVtxFOrS3gbvAK3L0000" alt="uml diagram">
+.
