@@ -6,7 +6,8 @@
   "repository": "gmunguia/markdown-it-plantuml",
   "license": "MIT",
   "scripts": {
-    "test": "mocha test/*.js"
+    "test": "nyc mocha test/*.js",
+    "coverage": "nyc report --reporter=text-lcov"
   },
   "keywords": [
     "markdown-it-plugin",
@@ -19,6 +20,13 @@
     "eslint": "4.10.0",
     "markdown-it": "8.4.0",
     "markdown-it-testgen": "0.1.4",
-    "mocha": "4.0.1"
+    "mocha": "4.0.1",
+    "nyc": "12.0.2"
+  },
+  "nyc": {
+    "exclude": [
+      "lib",
+      "test"
+    ]
   }
 }
