@@ -1,0 +1,57 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:carbon
+    working_directory: ~/markdown-it-plantuml
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install dependencies
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+
+  test:
+    docker:
+      - image: circleci/node:carbon
+    working_directory: ~/markdown-it-plantuml
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Test
+          command: npm run test:report
+          environment:
+            MOCHA_FILE: tests/test-results.xml
+      - run:
+          name: Generate code coverage
+          command: npm run coverage:report
+      - store_test_results:
+          path: tests
+      - store_artifacts:
+          path: tests
+          prefix: tests
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
