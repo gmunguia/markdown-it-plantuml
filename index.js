@@ -4,11 +4,19 @@
 
 module.exports = function umlPlugin(md, options) {
 
-  function generateSourceDefault(umlCode) {
+  function generateSourceDefault(umlCode, pluginOptions) {
+    var imageFormat = pluginOptions.imageFormat || 'svg';
+    var diagramName = pluginOptions.diagramName || 'uml';
     var deflate = require('./lib/deflate.js');
-    var zippedCode =
-      deflate.encode64(deflate.zip_deflate(unescape(encodeURIComponent('@startuml\n' + umlCode + '\n@enduml')), 9));
-    return 'http://www.plantuml.com/plantuml/svg/' + zippedCode;
+    var zippedCode = deflate.encode64(
+      deflate.zip_deflate(
+        unescape(encodeURIComponent(
+          '@start' + diagramName + '\n' + umlCode + '\n@end' + diagramName)),
+        9
+      )
+    );
+
+    return 'http://www.plantuml.com/plantuml/' + imageFormat + '/' + zippedCode;
   }
 
   options = options || {};
@@ -17,8 +25,8 @@ module.exports = function umlPlugin(md, options) {
       openChar = openMarker.charCodeAt(0),
       closeMarker = options.closeMarker || '@enduml',
       closeChar = closeMarker.charCodeAt(0),
-      generateSource = options.generateSource || generateSourceDefault,
-      render = options.render || md.renderer.rules.image;
+      render = options.render || md.renderer.rules.image,
+      generateSource = options.generateSource || generateSourceDefault;
 
   function uml(state, startLine, endLine, silent) {
     var nextLine, markup, params, token, i,
@@ -116,7 +124,7 @@ module.exports = function umlPlugin(md, options) {
 
     token = state.push('uml_diagram', 'img', 0);
     // alt is constructed from children. No point in populating it here.
-    token.attrs = [ [ 'src', generateSource(contents) ], [ 'alt', '' ] ];
+    token.attrs = [ [ 'src', generateSource(contents, options) ], [ 'alt', '' ] ];
     token.block = true;
     token.children = altToken;
     token.info = params;
