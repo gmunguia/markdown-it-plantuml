@@ -48,13 +48,14 @@ Options:
   - __diagramName__ - optional, defaults to `uml`. Name used by generateSoruce to generate diagram tags like `@startuml`, `@startditaa`, etc.
   - __imageFormat__ - optional, defaults to `svg`. Format used by `generateSource` to generate the `src` of the image element.
   - __render__ - optional, defaults to markdown-it image renderer. Renderer function for opening/closing tokens.
+  - __server__ - optional, defaults to `http://www.plantuml.com/plantuml`. Defines the plantuml server used for image generation.
 
 #### Example: using custom URL to serve diagrams
 
 ```js
 const options = {
   generateSource: function generateSource(umlCode) {
-    return `https://your.server/plant-uml/${yourEncodeFunction(umlCode)}`; 
+    return `https://your.server/plant-uml/${yourEncodeFunction(umlCode)}`;
   }
 }
 

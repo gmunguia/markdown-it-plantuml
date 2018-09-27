@@ -38,4 +38,12 @@ describe('markdown-it-plantuml', function () {
     { header: true },
     pngParser
   );
+
+  var parserWithCustomServer = md().use(plantuml, { server: 'http://example.com/plantuml' });
+
+  generate(
+    path.join(__dirname, 'fixtures/server.txt'),
+    { header: true },
+    parserWithCustomServer
+  );
 });
