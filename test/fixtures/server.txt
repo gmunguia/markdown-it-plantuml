@@ -1,4 +1,4 @@
-Outputs png format if specified
+Outputs svg format with custom server
 .
 @startuml
 Bob -> Alice : hello
