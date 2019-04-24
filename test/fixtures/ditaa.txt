@@ -12,5 +12,5 @@ Ditaa diagram is supported
 	+-------------------------+
 @endditaa
 .
-<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgISaiIKpaqjQ50cq51GLj93Q2mrMZ00NQO3cmHX3RJW4cKmDI4v9QKQ805a8nfoObCp6zA34NgCObFxaqDpMl1AIcHZ4tCJqpMH5i18evG52TKbk3B8og1kmC0cxcj5B01UAuE65c-UIN52lafocKvnTbmqpdX0S91j3cSaZDIm7x7m00" alt="uml diagram">
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgISaiIKpaqjQ50cq51GLj93Q2mrMZ00NQO3cmHX3RJW4cKmDI4v9QKQ805a8nfoObCp6zA34NgCObFxaqDpMl1AIcHZ4tCJqpMH5i18evG52TKbk3B8og1kmC0cxcj5B01UAuE65c-UIN52lafocKvnTbmqpdX0S91j3cSaZDIm7x7m00" alt="uml diagram">
 .

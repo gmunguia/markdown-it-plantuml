@@ -4,7 +4,7 @@ Simple diagram
 Bob -> Alice : hello
 @enduml
 .
-<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80" alt="uml diagram">
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80" alt="uml diagram">
 .
 
 
@@ -14,7 +14,7 @@ Diagram with alt text
 Bob -> Alice : hello
 @enduml
 .
-<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80" alt="alt text">
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80" alt="alt text">
 .
 
 
@@ -25,7 +25,7 @@ Bob -> Alice : hello
 # This wont be a title
 @enduml
 .
-<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vr9M2Cd8B5OepyyhKKXALKXKACaioKdbSaZDIm7g0G00" alt="uml diagram">
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vr9M2Cd8B5OepyyhKKXALKXKACaioKdbSaZDIm7g0G00" alt="uml diagram">
 .
 
 
@@ -35,7 +35,7 @@ Marker could be indented up to 3 spaces
    Bob -> Alice : hello
    @enduml
 .
-<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuL9GK73AJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1oWC0" alt="uml diagram">
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuL9GK73AJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1oWC0" alt="uml diagram">
 .
 
 
@@ -57,7 +57,7 @@ Diagrams self-close at the end of the document
 @startuml
 Bob -> Alice : hello
 .
-<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80" alt="uml diagram">
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80" alt="uml diagram">
 .
 
 
@@ -69,7 +69,7 @@ Bob -> Alice : hello
 @enduml
 .
 <p>blah blah</p>
-<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80" alt="uml diagram">
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80" alt="uml diagram">
 .
 
 
@@ -81,7 +81,7 @@ They could be nested in lists
 .
 <ul>
 <li>
-<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuL9GK73AJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1oWC0" alt="uml diagram">
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuL9GK73AJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1oWC0" alt="uml diagram">
 </li>
 </ul>
 .
@@ -99,13 +99,13 @@ List indentation quirks
 .
 <ul>
 <li>
-<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuL800gVy90LTEmN7dCpaL0KhXOpKd9nyBeVKl1IW0W00" alt="uml diagram">
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuL800gVy90LTEmN7dCpaL0KhXOpKd9nyBeVKl1IW0W00" alt="uml diagram">
 </li>
 </ul>
 <p>@enduml</p>
 <ul>
 <li>
-<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuU9oICrB0J80" alt="uml diagram">
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuU9oICrB0J80" alt="uml diagram">
 </li>
 </ul>
 <p>Bob -&gt; Alice : hello
@@ -125,7 +125,7 @@ WB is Idle
 WB is Processing
 @enduml
 .
-<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuIhAJoejBb5G2azDKd0goYylJYrIKaWiLWXtuk9oCE0ATrB8B5RmJCb91N8D3M020KNvoQd5nPbvwLmEgNafG8C0" alt="uml diagram">
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuIhAJoejBb5G2azDKd0goYylJYrIKaWiLWXtuk9oCE0ATrB8B5RmJCb91N8D3M020KNvoQd5nPbvwLmEgNafG8C0" alt="uml diagram">
 .
 
 
@@ -135,5 +135,5 @@ UML including non-english character is rendered correctly
 太郎 -> 花子 : こんにちは！
 @enduml
 .
-<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNgwPDNBvZu5NJk55rqRdwwTe62byBXnykEcoOyRLpzkNFYuSVtxFOrS3gbvAK3L0000" alt="uml diagram">
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNgwPDNBvZu5NJk55rqRdwwTe62byBXnykEcoOyRLpzkNFYuSVtxFOrS3gbvAK3L0000" alt="uml diagram">
 .
