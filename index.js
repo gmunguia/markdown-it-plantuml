@@ -27,7 +27,8 @@ module.exports = function umlPlugin(md, options) {
       closeMarker = options.closeMarker || '@enduml',
       closeChar = closeMarker.charCodeAt(0),
       render = options.render || md.renderer.rules.image,
-      generateSource = options.generateSource || generateSourceDefault;
+      generateSource = options.generateSource || generateSourceDefault,
+      className = options.className || null;
 
   function uml(state, startLine, endLine, silent) {
     var nextLine, markup, params, token, i,
@@ -126,6 +127,9 @@ module.exports = function umlPlugin(md, options) {
     token = state.push('uml_diagram', 'img', 0);
     // alt is constructed from children. No point in populating it here.
     token.attrs = [ [ 'src', generateSource(contents, options) ], [ 'alt', '' ] ];
+    if (className) {
+      token.attrs.push([ 'class', className ]);
+    }
     token.block = true;
     token.children = altToken;
     token.info = params;

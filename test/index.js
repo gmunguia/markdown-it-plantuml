@@ -4,6 +4,11 @@ var path = require('path');
 var generate = require('markdown-it-testgen');
 var md = require('markdown-it');
 var plantuml = require('../');
+var assert = require('assert');
+var fs = require('fs');
+var jsdom = require('jsdom');
+
+var defaultDocument = fs.readFileSync(path.join(__dirname, 'fixtures/default.txt'), 'utf-8');
 
 /*eslint-env mocha*/
 
@@ -46,4 +51,25 @@ describe('markdown-it-plantuml', function () {
     { header: true },
     parserWithCustomServer
   );
+
+  describe('when option.className is unset', function () {
+    var dom = new jsdom.JSDOM(defaultParser.parse(defaultDocument), 'text/html');
+    it('should generate img tags with empty class attribute', function () {
+      var images = dom.window.document.getElementsByTagName('img');
+      for (var i = 0; i < images.length; ++i) {
+        assert.equals(images[i].className, '');
+      }
+    });
+  });
+
+  describe('when option.className is set to plantuml', function () {
+    var parserWithClass = md().use(plantuml, { className: 'plantuml' });
+    var dom = new jsdom.JSDOM(parserWithClass.parse(defaultDocument), 'text/html');
+    it('should generate img tags with class="plantuml"', function () {
+      var images = dom.window.document.getElementsByTagName('img');
+      for (var i = 0; i < images.length; ++i) {
+        assert.equals(images[i].className, 'plantuml');
+      }
+    });
+  });
 });
