@@ -9,6 +9,7 @@
   "description": "Plugin to create block-level uml diagrams for markdown-it markdown parser",
   "repository": "gmunguia/markdown-it-plantuml",
   "license": "MIT",
+  "types": "index.d.ts",
   "scripts": {
     "test": "mocha test/*.js",
     "test:report": "npm test -- --reporter mocha-junit-reporter",
